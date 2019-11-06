@@ -1,34 +1,40 @@
-ext{
+ext {
     //*************************Module配置管理**************************
     versions = [
-           compileSdkVersion: 29,
-           applicationId    : "net.ss.read.book",
-           minSdkVersion    : 21,
-           targetSdkVersion : 29,
-           versionCode      : 1,
-           versionName      : "1.0"
+            compileSdkVersion: 29,
+            applicationId    : "net.ss.read.book",
+            minSdkVersion    : 21,
+            targetSdkVersion : 29,
+            versionCode      : 1,
+            versionName      : "1.0"
     ]
 
     def dependVersion = [
-     ]
+    ]
     dependencies = [
-            appcompat : 'androidx.appcompat:appcompat:1.1.0',
-            gson : 'com.google.code.gson:gson:2.8.6',
-            rxandroid : 'io.reactivex.rxjava2:rxandroid:2.1.1',
-            rxJava : 'io.reactivex.rxjava2:rxjava:2.2.13',
+            appcompat     : 'androidx.appcompat:appcompat:1.1.0',
+
+            // 网络框架
+            gson          : 'com.google.code.gson:gson:2.8.6',
+            rxandroid     : 'io.reactivex.rxjava2:rxandroid:2.1.1',
+            rxJava        : 'io.reactivex.rxjava2:rxjava:2.2.13',
             //retrofit添加Json解析返回数据
-            retrofitGson : 'com.squareup.retrofit2:converter-gson:2.5.0',
-            retrofit : 'com.squareup.retrofit2:retrofit:2.6.2',
-            retrofitRxjava : 'com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0',
-            rxlifecycle : 'com.trello.rxlifecycle2:rxlifecycle-components:2.1.0',
+            retrofitGson  : 'com.squareup.retrofit2:converter-gson:2.5.0',
+            retrofit      : 'com.squareup.retrofit2:retrofit:2.6.2',
+            retrofitRxjava: 'com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0',
+            // end
+            rxlifecycle   : 'com.trello.rxlifecycle2:rxlifecycle-components:2.1.0',
             // LiveData 和 ViewModel 等架构组件 两者都有的依赖
-            lifecycle : 'androidx.lifecycle:lifecycle-extensions:2.1.0',
+            lifecycle     : 'androidx.lifecycle:lifecycle-extensions:2.1.0',
             // (Java only)
-            work : 'androidx.work:work-runtime:2.2.0',
+            work          : 'androidx.work:work-runtime:2.2.0',
             // optional - RxJava2 support
-            workRxJava : 'androidx.work:work-rxjava2:2.2.0',
+            workRxJava    : 'androidx.work:work-rxjava2:2.2.0',
             // optional - GCMNetworkManager support
-            workGcm : 'androidx.work:work-gcm:2.2.0'
+            workGcm       : 'androidx.work:work-gcm:2.2.0',
+            //图片框架
+            glide         : "com.github.bumptech.glide:glide:4.6.1",
+            glideCompiler : "com.github.bumptech.glide:compiler:4.6.1",
     ]
 
 

@@ -43,6 +43,8 @@ dependencies {
     api rootProject.ext.dependencies["work"]
     api rootProject.ext.dependencies["workRxJava"]
     api rootProject.ext.dependencies["workGcm"]
+    api rootProject.ext.dependencies["glide"]
+    api rootProject.ext.dependencies["glideCompiler"]
 
 
 }
