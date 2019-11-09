@@ -7,8 +7,12 @@ android {
         targetSdkVersion rootProject.ext.versions.targetSdkVersion
         versionCode rootProject.ext.versions.versionCode
         versionName rootProject.ext.versions.versionName
-
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        javaCompileOptions {
+            annotationProcessorOptions {
+                includeCompileClasspath true
+            }
+        }
     }
 
     buildTypes {
@@ -22,6 +26,10 @@ android {
         enabled = true
     }
 
+    compileOptions {
+        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
@@ -29,6 +37,7 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    annotationProcessor 'androidx.annotation:annotation:1.1.0'
 
     api rootProject.ext.dependencies["appcompat"]
     api rootProject.ext.dependencies["gson"]
@@ -44,7 +53,5 @@ dependencies {
     api rootProject.ext.dependencies["workRxJava"]
     api rootProject.ext.dependencies["workGcm"]
     api rootProject.ext.dependencies["glide"]
-    api rootProject.ext.dependencies["glideCompiler"]
-
 
 }
