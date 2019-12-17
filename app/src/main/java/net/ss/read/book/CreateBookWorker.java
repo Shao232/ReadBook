@@ -12,17 +12,13 @@ import androidx.work.WorkerParameters;
  */
 public class CreateBookWorker extends Worker {
 
-    private BookGatherUtils bookGatherUtils;
-
     public CreateBookWorker(@NonNull Context context, @NonNull WorkerParameters workerParams) {
         super(context, workerParams);
-        bookGatherUtils = new BookGatherUtils(context);
     }
 
     @NonNull
     @Override
     public Result doWork() {
-        bookGatherUtils.searchBook();
         return Result.success();
     }
 }

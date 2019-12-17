@@ -1,2 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="net.ss.lib.common" />
+    package="net.ss.lib.common">
+
+    <application>
+
+    </application>
+
+</manifest>

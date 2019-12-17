@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CustomLadderLayout">
+        <attr name="topWidth" format="dimension"/>
+        <attr name="bottomWidth" format="dimension"/>
+        <attr name="android:layout_height"/>
+    </declare-styleable>
+</resources>

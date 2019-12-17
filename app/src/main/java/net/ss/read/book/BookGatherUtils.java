@@ -1,8 +1,9 @@
 package net.ss.read.book;
 
-import android.content.Context;
 import android.util.Log;
+
 import net.ss.lib.common.Slog;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -19,43 +20,10 @@ import java.util.Objects;
  */
 public class BookGatherUtils {
 
-    private Context mContext;
-
-    public BookGatherUtils(Context context) {
-        mContext = context;
-    }
-
-    public void searchBook() {
-        Slog.i("path >>> " + mContext.getExternalCacheDir());
-        File fileDirectory = new File("/storage/emulated/0/Android/data/" +
-                "com.gudianbiquge.ebook.app/files/books");
-        //com.biquge.ebook.app
-        File[] fileArray = fileDirectory.listFiles();
-        if (fileArray != null) {
-            for (File file : fileArray) {
-                if (file.isDirectory()) {
-                    Slog.i(" directory >>>" + file.getAbsolutePath());
-                    File childFile = new File(file.getAbsolutePath() + "/1/");
-                    File[] childDirectoryArray = childFile.listFiles();
-                    if (childDirectoryArray != null) {
-                        int i = 0;
-                        for (File bookFile : childDirectoryArray) {
-                            Slog.i(" file >>>" + bookFile.getAbsolutePath());
-                            String content = getFileContent(bookFile);
-                            writeTxtToFile(content, "/storage/emulated/0/books/",
-                                    "data_" + i + ".txt");
-                            i++;
-                        }
-                    }
-                }
-            }
-        }
-    }
-
     /**
      * 将字符串写入到文本文件中
      */
-    private void writeTxtToFile(String strcontent, String filePath, String fileName) {
+    public static void writeTxtToFile(String strcontent, String filePath, String fileName) {
         //生成文件夹之后，再生成文件，不然会出错
         makeFilePath(filePath, fileName);
         String strFilePath = filePath + fileName;
@@ -77,7 +45,6 @@ public class BookGatherUtils {
         }
     }
 
-
     /**
      * 生成文件
      *
@@ -85,7 +52,7 @@ public class BookGatherUtils {
      * @param fileName name
      * @return file
      */
-    private File makeFilePath(String filePath, String fileName) {
+    private static File makeFilePath(String filePath, String fileName) {
         File file = null;
         makeRootDirectory(filePath);
         try {
@@ -102,7 +69,7 @@ public class BookGatherUtils {
     /**
      * 生成文件夹
      *
-     * @param filePath
+     * @param filePath  path
      */
     private static void makeRootDirectory(String filePath) {
         File file;
@@ -154,7 +121,7 @@ public class BookGatherUtils {
      *
      * @param file directory
      */
-    public void setTraversalFile(File file) {
+    public static void setTraversalFile(File file) {
         if (file.exists() && file.isDirectory()) {
             Slog.i(" directory >>> " + file.getAbsolutePath());
             File[] fileArray = file.listFiles();
@@ -169,5 +136,4 @@ public class BookGatherUtils {
             }
         }
     }
-
 }

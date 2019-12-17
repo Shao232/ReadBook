@@ -80,5 +80,4 @@ public class UserInfoBean extends AbstractResponseBean {
     public int getIntegral() {
         return Integral;
     }
-
 }
