@@ -51,11 +51,12 @@ dependencies {
     api rootProject.ext.dependencies["retrofit"]
     api rootProject.ext.dependencies["retrofitRxjava"]
     api rootProject.ext.dependencies["rxlifecycle"]
-
     api rootProject.ext.dependencies["lifecycle"]
+    api rootProject.ext.dependencies["lifecycle-common-java8"]
     api rootProject.ext.dependencies["work"]
     api rootProject.ext.dependencies["workRxJava"]
     api rootProject.ext.dependencies["workGcm"]
     api rootProject.ext.dependencies["bumptech-glide-glide"]
     api rootProject.ext.dependencies["bumptech-glide-compiler"]
+    api rootProject.ext.dependencies["mmkv"]
 }

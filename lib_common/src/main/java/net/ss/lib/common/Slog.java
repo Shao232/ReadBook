@@ -10,6 +10,14 @@ public class Slog {
 
     private static final String STAG = Slog.class.getSimpleName();
 
+    public static void deBug(String msg) {
+        Log.d(STAG,msg);
+    }
+
+    public static void deBug(String tag,String msg){
+        Log.d(tag, msg);
+    }
+
     public static void i(String msg) {
         Log.i(STAG,msg);
     }

@@ -8,6 +8,7 @@ import androidx.work.WorkManager;
 
 import net.ss.lib.common.PermissionManager;
 import net.ss.lib.common.base.BaseActivity;
+import net.ss.lib.common.utils.ScreenUtils;
 
 import java.lang.ref.WeakReference;
 
@@ -25,9 +26,7 @@ public class MainActivity extends BaseActivity {
         setContentView(R.layout.activity_main);
         permissionManager = PermissionManager.getInstance(new WeakReference<>(this));
         permissionManager.verifyStoragePermissions(this, REQUEST_EXTERNAL_STORAGE);
-
-
-
+        ScreenUtils.getInstance().getScreenWidthAndHeight(getApplicationContext());
 //        Map<String,String> params = new HashMap<>(3);
 //        params.put("password","wasd150136");
 //        params.put("username","15021781502");
