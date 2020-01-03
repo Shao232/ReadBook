@@ -1,14 +1,11 @@
 package net.ss.read.book;
 
-import android.os.Bundle;
-
 import androidx.annotation.NonNull;
 import androidx.work.OneTimeWorkRequest;
 import androidx.work.WorkManager;
 
 import net.ss.lib.common.PermissionManager;
 import net.ss.lib.common.base.BaseActivity;
-import net.ss.lib.common.utils.ScreenUtils;
 
 import java.lang.ref.WeakReference;
 
@@ -21,12 +18,15 @@ public class MainActivity extends BaseActivity {
     private PermissionManager permissionManager;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    protected int getLayout() {
+        return R.layout.activity_main;
+    }
+
+    @Override
+    protected void initCreate() {
         permissionManager = PermissionManager.getInstance(new WeakReference<>(this));
         permissionManager.verifyStoragePermissions(this, REQUEST_EXTERNAL_STORAGE);
-        ScreenUtils.getInstance().getScreenWidthAndHeight(getApplicationContext());
+
 //        Map<String,String> params = new HashMap<>(3);
 //        params.put("password","wasd150136");
 //        params.put("username","15021781502");
