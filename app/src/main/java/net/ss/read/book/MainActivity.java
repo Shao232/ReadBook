@@ -65,15 +65,12 @@ public class MainActivity extends BaseActivity {
 
 
     @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
+                                           @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         permissionManager.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        initMethod();
+
     }
 
-    private void initMethod() {
-        OneTimeWorkRequest oneTimeWorkRequest =
-                new OneTimeWorkRequest.Builder(CreateBookWorker.class).build();
-        WorkManager.getInstance(this).enqueue(oneTimeWorkRequest);
-    }
+
 }

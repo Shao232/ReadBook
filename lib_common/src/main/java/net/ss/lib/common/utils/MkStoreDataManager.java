@@ -18,12 +18,11 @@ import net.ss.lib.common.Slog;
  */
 public class MkStoreDataManager implements MMKVHandler {
 
-    private static final String TAG = MkStoreDataManager.class.getSimpleName();
     private static MkStoreDataManager sMkStoreDataManager;
     private MMKV mmkv;
 
     private MkStoreDataManager(Context context) {
-        String rootDir = MMKV.initialize(context);
+        MMKV.initialize(context);
         mmkv = MMKV.defaultMMKV();
     }
 
