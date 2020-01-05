@@ -18,7 +18,7 @@ import net.ss.lib.common.Slog;
  */
 public class MkStoreDataManager implements MMKVHandler {
 
-    private static MkStoreDataManager sMkStoreDataManager;
+    private static volatile MkStoreDataManager sMkStoreDataManager;
     private MMKV mmkv;
 
     private MkStoreDataManager(Context context) {

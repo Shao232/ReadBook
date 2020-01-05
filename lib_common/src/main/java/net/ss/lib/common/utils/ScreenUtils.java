@@ -13,7 +13,7 @@ import net.ss.lib.common.Slog;
  */
 public class ScreenUtils {
 
-    private static ScreenUtils screenUtils;
+    private static volatile ScreenUtils screenUtils;
 
     private ScreenUtils() {
     }
